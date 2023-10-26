@@ -24,17 +24,17 @@ const graphik = localFont({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://leerob.io'),
+  metadataBase: new URL('https://www.marlindalpozzo.com'),
   title: {
-    default: 'Lee Robinson',
-    template: '%s | Lee Robinson',
+    default: 'Marlin Dalpozzo',
+    template: '%s | Marlin Dalpozzo',
   },
-  description: 'Developer, writer, and creator.',
+  description: 'Developer, musician, and explorer.',
   openGraph: {
-    title: 'Lee Robinson',
-    description: 'Developer, writer, and creator.',
-    url: 'https://leerob.io',
-    siteName: 'Lee Robinson',
+    title: 'Marlin Dalpozzo',
+    description: 'Developer, musician, and explorer.',
+    url: 'https://www.marlindalpozzo.com',
+    siteName: 'Marlin Dalpozzo',
     locale: 'en_US',
     type: 'website',
   },
@@ -50,13 +50,14 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: 'Lee Robinson',
+    title: 'Marlin Dalpozzo',
     card: 'summary_large_image',
   },
-  verification: {
-    google: 'eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw',
-    yandex: '14d2e73487fa6c71',
-  },
+  // TODO what are these...
+  // verification: {
+  //   google: 'eZSdmzAXlLkKhNJzfgwDqWORghxnJ8qR9_CHdAh5-xw',
+  //   yandex: '14d2e73487fa6c71',
+  // },
 }
 
 export default function RootLayout({

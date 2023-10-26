@@ -1,18 +1,19 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { Mdx } from 'app/components/mdx';
-import { allBlogs } from 'contentlayer/generated';
-import Balancer from 'react-wrap-balancer';
-import ViewCounter from '../view-counter';
-import { getViewsCount } from 'lib/metrics';
-import { Suspense } from 'react';
+import type { Metadata } from 'next'
+import { notFound } from 'next/navigation'
+import { Mdx } from 'app/components/mdx'
+// import { allBlogs } from 'contentlayer/generated';
+import Balancer from 'react-wrap-balancer'
+import ViewCounter from '../view-counter'
+import { getViewsCount } from 'lib/metrics'
+import { Suspense } from 'react'
 
 export async function generateMetadata({
   params,
 }): Promise<Metadata | undefined> {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  let post
+  // const post = allBlogs.find((post) => post.slug === params.slug);
   if (!post) {
-    return;
+    return
   }
 
   const {
@@ -21,10 +22,10 @@ export async function generateMetadata({
     summary: description,
     image,
     slug,
-  } = post;
+  } = post
   const ogImage = image
     ? `https://leerob.io${image}`
-    : `https://leerob.io/og?title=${title}`;
+    : `https://leerob.io/og?title=${title}`
 
   return {
     title,
@@ -47,43 +48,44 @@ export async function generateMetadata({
       description,
       images: [ogImage],
     },
-  };
+  }
 }
 
 function formatDate(date: string) {
-  const currentDate = new Date();
-  const targetDate = new Date(date);
+  const currentDate = new Date()
+  const targetDate = new Date(date)
 
-  const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear();
-  const monthsAgo = currentDate.getMonth() - targetDate.getMonth();
-  const daysAgo = currentDate.getDate() - targetDate.getDate();
+  const yearsAgo = currentDate.getFullYear() - targetDate.getFullYear()
+  const monthsAgo = currentDate.getMonth() - targetDate.getMonth()
+  const daysAgo = currentDate.getDate() - targetDate.getDate()
 
-  let formattedDate = '';
+  let formattedDate = ''
 
   if (yearsAgo > 0) {
-    formattedDate = `${yearsAgo}y ago`;
+    formattedDate = `${yearsAgo}y ago`
   } else if (monthsAgo > 0) {
-    formattedDate = `${monthsAgo}mo ago`;
+    formattedDate = `${monthsAgo}mo ago`
   } else if (daysAgo > 0) {
-    formattedDate = `${daysAgo}d ago`;
+    formattedDate = `${daysAgo}d ago`
   } else {
-    formattedDate = 'Today';
+    formattedDate = 'Today'
   }
 
   const fullDate = targetDate.toLocaleString('en-us', {
     month: 'long',
     day: 'numeric',
     year: 'numeric',
-  });
+  })
 
-  return `${fullDate} (${formattedDate})`;
+  return `${fullDate} (${formattedDate})`
 }
 
 export default async function Blog({ params }) {
-  const post = allBlogs.find((post) => post.slug === params.slug);
+  let post
+  // const post = allBlogs.find((post) => post.slug === params.slug)
 
   if (!post) {
-    notFound();
+    notFound()
   }
 
   return (
@@ -109,15 +111,15 @@ export default async function Blog({ params }) {
       </div>
       <Mdx code={post.body.code} />
     </section>
-  );
+  )
 }
 
 async function Views({ slug }: { slug: string }) {
-  let views;
+  let views
   try {
-    views = await getViewsCount();
+    views = await getViewsCount()
   } catch (error) {
-    console.error(error);
+    console.error(error)
   }
-  return <ViewCounter allViews={views} slug={slug} trackView />;
+  return <ViewCounter allViews={views} slug={slug} trackView />
 }
