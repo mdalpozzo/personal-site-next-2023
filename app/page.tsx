@@ -15,9 +15,9 @@ export default function Page() {
           />
         </div>
 
-        <div className='w-full flex justify-center'>
+        <div className="w-full flex justify-center">
           <div className="flex flex-col justify-between">
-            <div className='mb-10'>
+            <div className="mb-10">
               <h1 className="font-bold text-6xl mb-8">marlin dalpozzo</h1>
 
               <p className="prose prose-neutral dark:prose-invert text-3xl">
