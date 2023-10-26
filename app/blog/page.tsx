@@ -1,16 +1,16 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import { allBlogs } from 'contentlayer/generated';
-import ViewCounter from './view-counter';
-import { getViewsCount } from 'lib/metrics';
+import type { Metadata } from 'next'
+import Link from 'next/link'
+import { allBlogs } from 'contentlayer/generated'
+import ViewCounter from './view-counter'
+import { getViewsCount } from 'lib/metrics'
 
 export const metadata: Metadata = {
   title: 'Blog',
   description: 'Read my thoughts on software development, design, and more.',
-};
+}
 
 export default async function BlogPage() {
-  const allViews = await getViewsCount();
+  // const allViews = await getViewsCount();
 
   return (
     <section>
@@ -18,9 +18,9 @@ export default async function BlogPage() {
       {allBlogs
         .sort((a, b) => {
           if (new Date(a.publishedAt) > new Date(b.publishedAt)) {
-            return -1;
+            return -1
           }
-          return 1;
+          return 1
         })
         .map((post) => (
           <Link
@@ -33,7 +33,8 @@ export default async function BlogPage() {
                 {post.title}
               </p>
               <ViewCounter
-                allViews={allViews}
+                // allViews={allViews}
+                allViews={[{ slug: '/', count: 500 }]}
                 slug={post.slug}
                 trackView={false}
               />
@@ -41,5 +42,5 @@ export default async function BlogPage() {
           </Link>
         ))}
     </section>
-  );
+  )
 }
