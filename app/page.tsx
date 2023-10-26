@@ -10,7 +10,7 @@ export default function Page() {
             fill
             objectFit="cover"
             objectPosition="50% 30%"
-            src="/marlin-portrait-photo.jpeg"
+            src="/images/marlin-portrait-photo.jpeg"
             className="aspect-video"
           />
         </div>
