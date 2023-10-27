@@ -1,28 +1,21 @@
 import Link from 'next/link'
 import React from 'react'
+import { SVGComponentProps } from '@type/SVGComponentProps'
 
 interface SkillChipProps {
   src: string
-  Icon: React.ComponentType<{ width: number; height: number }>
+  Icon: React.ComponentType<SVGComponentProps>
   name: string
-  iconHeight: number
-  iconWidth: number
 }
 
-export const SkillChip = ({
-  src,
-  Icon,
-  name,
-  iconHeight,
-  iconWidth,
-}: SkillChipProps) => {
+export const SkillChip = ({ src, Icon, name }: SkillChipProps) => {
   return (
     <Link
       href={src}
-      className="flex flex-row gap-2 justify-center items-center"
+      className="flex flex-row gap-2 md:gap-6 justify-center items-center"
     >
-      <Icon height={iconHeight} width={iconWidth} />
-      <p className="p-0 m-0">{name}</p>
+      <Icon className="h-8 w-8 md:h-20 md:w-20" />
+      <p className="md:text-lg">{name}</p>
     </Link>
   )
 }

@@ -1,8 +1,6 @@
-import { SVGProps } from 'react'
+import { SVGComponentProps } from '@type/SVGComponentProps'
 
-interface FirebaseLogoProps extends SVGProps<SVGSVGElement> {}
-
-export const FirebaseLogo = (props: FirebaseLogoProps) => {
+export const FirebaseLogo = (props: SVGComponentProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

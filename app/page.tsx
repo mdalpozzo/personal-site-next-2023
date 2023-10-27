@@ -1,18 +1,15 @@
 import Image from 'next/image'
 import { CustomImage } from './_components/CustomImage'
 import { SkillChip } from './_components/SkillChip'
-import { NextLogo } from './_components/svgs/NextLogo'
-import { ReactLogo } from './_components/svgs/ReactLogo'
 import { DividerHorizontal } from './_components/DividerHorizontal'
-import { DartLogo } from './_components/svgs/DartLogo'
-import { JavaScriptLogo } from './_components/svgs/JavaScriptLogo'
-import { TypeScriptLogo } from './_components/svgs/TypeScriptLogo'
-import { FlutterLogo } from './_components/svgs/FlutterLogo'
-import { FirebaseLogo } from './_components/svgs/FirebaseLogo'
-import { GCPLogo } from './_components/svgs/GCPLogo'
-import { AWSLogo } from './_components/svgs/AWSLogo'
-import { StripeLogo } from './_components/svgs/StripeLogo'
+import { HomeConfig } from './HomeConfig'
+import { cn } from '@utils/cn'
+import { SectionTitle } from './_components/SectionTitle'
 
+// const ICON_SIZE = {
+//   mobile: 30,
+//   desktop: 70,
+// }
 const ICON_SIZE = 30
 
 export default function Page() {
@@ -55,33 +52,15 @@ export default function Page() {
 
         <div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            <div className="flex">
-              <SkillChip
-                iconHeight={ICON_SIZE}
-                iconWidth={ICON_SIZE}
-                Icon={JavaScriptLogo}
-                src="https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-                name="JavaScript"
-              />
-            </div>
-            <div className="flex">
-              <SkillChip
-                iconHeight={ICON_SIZE}
-                iconWidth={ICON_SIZE}
-                Icon={TypeScriptLogo}
-                src="https://www.typescriptlang.org/"
-                name="TypeScript"
-              />
-            </div>
-            <div className="flex">
-              <SkillChip
-                iconHeight={ICON_SIZE}
-                iconWidth={ICON_SIZE}
-                Icon={DartLogo}
-                src="https://dart.dev/"
-                name="Dart"
-              />
-            </div>
+            {HomeConfig.languages.map((skill) => {
+              const { Icon, linkURL, name } = skill
+
+              return (
+                <div className="flex">
+                  <SkillChip key={name} Icon={Icon} src={linkURL} name={name} />
+                </div>
+              )
+            })}
           </div>
         </div>
 
@@ -89,48 +68,30 @@ export default function Page() {
 
         <p className="text-2xl inline-block mb-8 mt-10">Frameworks</p>
 
-        <p className="text-base mb-4">Web</p>
+        <SectionTitle name="Web" className="text-base md:text-2xl mb-10" />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div className="flex">
-            <SkillChip
-              iconHeight={ICON_SIZE}
-              iconWidth={ICON_SIZE}
-              Icon={ReactLogo}
-              src="https://react.dev/"
-              name="React"
-            />
-          </div>
-          <div className="flex">
-            <SkillChip
-              iconHeight={ICON_SIZE}
-              iconWidth={ICON_SIZE}
-              Icon={NextLogo}
-              src="https://nextjs.org/"
-              name="Next.js"
-            />
-          </div>
+          {HomeConfig.frameworks.web.map((skill) => {
+            const { Icon, linkURL, name } = skill
+
+            return (
+              <div className="flex">
+                <SkillChip key={name} Icon={Icon} src={linkURL} name={name} />
+              </div>
+            )
+          })}
         </div>
 
-        <p className="text-base mb-4 mt-4">Mobile</p>
+        <SectionTitle name="Mobile" className="text-base md:text-2xl mb-10 mt-10" />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div className="flex">
-            <SkillChip
-              iconHeight={ICON_SIZE}
-              iconWidth={ICON_SIZE}
-              Icon={FlutterLogo}
-              src="https://flutter.dev/"
-              name="Flutter"
-            />
-          </div>
-          <div className="flex">
-            <SkillChip
-              iconHeight={ICON_SIZE}
-              iconWidth={ICON_SIZE}
-              Icon={ReactLogo}
-              src="https://reactnative.dev/"
-              name="React Native"
-            />
-          </div>
+          {HomeConfig.frameworks.mobile.map((skill) => {
+            const { Icon, linkURL, name } = skill
+
+            return (
+              <div className="flex">
+                <SkillChip key={name} Icon={Icon} src={linkURL} name={name} />
+              </div>
+            )
+          })}
         </div>
 
         <DividerHorizontal />
@@ -138,42 +99,15 @@ export default function Page() {
         <p className="text-2xl inline-block mb-8 mt-10">Tools</p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div className="flex">
-            <SkillChip
-              iconHeight={ICON_SIZE}
-              iconWidth={ICON_SIZE}
-              Icon={FirebaseLogo}
-              src="https://firebase.google.com/"
-              name="Firebase"
-            />
-          </div>
-          <div className="flex">
-            <SkillChip
-              iconHeight={ICON_SIZE}
-              iconWidth={ICON_SIZE}
-              Icon={GCPLogo}
-              src="https://cloud.google.com/"
-              name="Google Cloud Platform (GCP)"
-            />
-          </div>
-          <div className="flex">
-            <SkillChip
-              iconHeight={ICON_SIZE}
-              iconWidth={ICON_SIZE}
-              Icon={AWSLogo}
-              src="https://aws.amazon.com/"
-              name="Amazon Web Services (AWS)"
-            />
-          </div>
-          <div className="flex">
-            <SkillChip
-              iconHeight={ICON_SIZE}
-              iconWidth={ICON_SIZE}
-              Icon={StripeLogo}
-              src="https://stripe.com/"
-              name="Stripe"
-            />
-          </div>
+          {HomeConfig.tools.map((skill) => {
+            const { Icon, linkURL, name } = skill
+
+            return (
+              <div className="flex">
+                <SkillChip key={name} Icon={Icon} src={linkURL} name={name} />
+              </div>
+            )
+          })}
         </div>
 
         <DividerHorizontal />

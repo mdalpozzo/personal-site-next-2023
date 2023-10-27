@@ -1,8 +1,6 @@
-import { SVGProps } from 'react'
+import { SVGComponentProps } from '@type/SVGComponentProps'
 
-interface NextLogoProps extends SVGProps<SVGSVGElement> {}
-
-export const NextLogo = (props: NextLogoProps) => {
+export const NextLogo = (props: SVGComponentProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
