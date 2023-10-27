@@ -19,7 +19,7 @@ export default function Page() {
   return (
     <section className="w-full">
       <div className="min-h-[240px] h-[40vh] md:h-[30vh] w-full flex flex-row gap-6 md:gap-20">
-        <div className="w-1/3 min-w-[120px] h-full relative bg-zinc-950">
+        <div className="w-1/3 min-w-[120px] h-full relative">
           <CustomImage
             src="/images/marlin-portrait-photo.jpeg"
             alt="Personal Portrait"

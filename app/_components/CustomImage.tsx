@@ -14,7 +14,7 @@ export const CustomImage = ({ alt, ...props }: CustomImageProps) => {
   return (
     <div
       className={cn([
-        'bg-zinc-100 dark:bg-zinc-950 w-full h-full',
+        'w-full h-full',
         // { 'animate-pulse': !loaded },
       ])}
     >
