@@ -9,8 +9,11 @@ import { Suspense } from 'react'
 
 export async function generateMetadata({
   params,
+}: {
+  params: { slug: string }
 }): Promise<Metadata | undefined> {
   let post
+  let paramsHolder = params
   // const post = allBlogs.find((post) => post.slug === params.slug);
   if (!post) {
     return
@@ -80,12 +83,31 @@ function formatDate(date: string) {
   return `${fullDate} (${formattedDate})`
 }
 
-export default async function Blog({ params }) {
-  let post
+export default async function Blog({ params }: { params: { slug: string } }) {
+  let post: {
+    structuredData: Record<string, unknown>
+    title: string
+    publishedAt: string
+    slug: string
+    body: {
+      code: string
+    }
+  } = {
+    structuredData: {},
+    title: '',
+    publishedAt: '',
+    slug: '',
+    body: {
+      code: '',
+    },
+  }
+
+  let paramsHolder = params
   // const post = allBlogs.find((post) => post.slug === params.slug)
 
   if (!post) {
     notFound()
+    return null
   }
 
   return (
@@ -115,7 +137,10 @@ export default async function Blog({ params }) {
 }
 
 async function Views({ slug }: { slug: string }) {
-  let views
+  let views: {
+    count: number
+    slug: string
+  }[] = []
   try {
     views = await getViewsCount()
   } catch (error) {

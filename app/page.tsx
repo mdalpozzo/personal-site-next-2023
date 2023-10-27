@@ -1,17 +1,17 @@
 import Image from 'next/image'
+import { CustomImage } from './components/CustomImage'
 
 export default function Page() {
   return (
     <section className="w-full">
       <div className="min-h-[240px] h-[40vh] md:h-[30vh] w-full flex flex-row gap-20">
-        <div className="w-1/3 min-w-[120px] h-full relative bg-blue-300">
-          <Image
+        <div className="w-1/3 min-w-[120px] h-full relative bg-zinc-950">
+          <CustomImage
+            src="/images/marlin-portrait-photo.jpeg"
             alt="Personal Portrait"
             fill
-            objectFit="cover"
-            objectPosition="50% 30%"
-            src="/images/marlin-portrait-photo.jpeg"
-            className="aspect-video"
+            style={{ objectPosition: '50% 30%' }}
+            className="aspect-video object-cover"
           />
         </div>
 
