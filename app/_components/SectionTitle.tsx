@@ -5,8 +5,8 @@ export const SectionTitle = ({ name, className }: SectionTitleProps) => {
     <div className="inline-flex">
       <p
         className={cn([
-          'text-sm md:text-xl text-[#111010] font-bold px-1 w-2/3 rounded-sm',
-          'dark:bg-gradient-to-r to-transparent from-neutral-400',
+          'text-sm md:text-xl text-white pl-4 pt-4 w-full rounded-sm',
+          'dark:bg-gradient-to-t to-transparent from-neutral-800',
           className,
         ])}
       >
