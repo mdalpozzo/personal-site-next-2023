@@ -1,7 +1,7 @@
 import 'server-only';
 
 import { google } from 'googleapis';
-import { queryBuilder } from 'lib/planetscale';
+import { queryBuilder } from '@/app/_lib/planetscale';
 import { cache } from 'react';
 
 const googleAuth = new google.auth.GoogleAuth({

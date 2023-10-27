@@ -1,10 +1,10 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Mdx } from 'app/components/mdx'
+import { Mdx } from '@/app/_components/mdx'
 // import { allBlogs } from 'contentlayer/generated';
 import Balancer from 'react-wrap-balancer'
 import ViewCounter from '../view-counter'
-import { getViewsCount } from 'lib/metrics'
+import { getViewsCount } from '@/app/_lib/metrics'
 import { Suspense } from 'react'
 
 export async function generateMetadata({

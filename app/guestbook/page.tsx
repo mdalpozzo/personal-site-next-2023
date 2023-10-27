@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
-import { auth } from 'lib/auth';
-import { queryBuilder } from 'lib/planetscale';
+import { auth } from '@/app/_lib/auth';
+import { queryBuilder } from '@/app/_lib/planetscale';
 import { SignIn, SignOut } from './buttons';
 import Form from './form';
 

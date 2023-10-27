@@ -1,8 +1,8 @@
 'use server';
 
-import { auth } from 'lib/auth';
+import { auth } from '@/app/_lib/auth';
 import { type Session } from 'next-auth';
-import { queryBuilder } from 'lib/planetscale';
+import { queryBuilder } from '@/app/_lib/planetscale';
 import { revalidatePath } from 'next/cache';
 
 export async function increment(slug: string) {
