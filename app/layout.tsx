@@ -29,10 +29,10 @@ export const metadata: Metadata = {
     default: 'Marlin Dalpozzo',
     template: '%s | Marlin Dalpozzo',
   },
-  description: 'Developer, musician, and explorer.',
+  description: 'Full Stack Javascript Developer',
   openGraph: {
     title: 'Marlin Dalpozzo',
-    description: 'Developer, musician, and explorer.',
+    description: 'Full Stack Javascript Developer',
     url: 'https://www.marlindalpozzo.com',
     siteName: 'Marlin Dalpozzo',
     locale: 'en_US',

@@ -34,7 +34,7 @@ export default function Page() {
               </h1>
 
               <p className="prose prose-neutral dark:prose-invert text-2xl md:text-3xl">
-                developer, musician, explorer
+                full stack javascript developer
               </p>
             </div>
 
