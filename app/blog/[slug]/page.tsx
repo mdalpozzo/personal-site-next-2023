@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { Mdx } from '@/app/_components/mdx'
+// import { Mdx } from '@/app/_components/mdx'
 // import { allBlogs } from 'contentlayer/generated';
 import Balancer from 'react-wrap-balancer'
 import ViewCounter from '../view-counter'
@@ -131,7 +131,7 @@ export default async function Blog({ params }: { params: { slug: string } }) {
           <Views slug={post.slug} />
         </Suspense>
       </div>
-      <Mdx code={post.body.code} />
+      {/* <Mdx code={post.body.code} /> */}
     </section>
   )
 }
