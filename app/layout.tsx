@@ -2,9 +2,9 @@ import './global.css'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import Sidebar from './components/sidebar'
+import Sidebar from './_components/sidebar'
 import { Analytics } from '@vercel/analytics/react'
-import { cn } from 'utils/cn'
+import { cn } from '@/app/_utils/cn'
 
 const graphik = localFont({
   src: [
@@ -74,7 +74,7 @@ export default function RootLayout({
       ])}
     >
       <body className="antialiased mb-40 mt-8">
-        <main className="mt-6 flex flex-col mx-10 md:mx-32">
+        <main className="mt-6 flex flex-col mx-6 md:mx-32">
           <Sidebar />
           {children}
           <Analytics />
