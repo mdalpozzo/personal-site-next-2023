@@ -20,11 +20,20 @@
     "baseUrl": ".",
     "paths": {
       "@/*": [
-        "./*"
+        "./*",
       ],
       "contentlayer/generated": [
         "./.contentlayer/generated"
-      ]
+      ],
+      "@components/*": [
+        "./app/_components/*"
+      ],
+      "@utils/*": [
+        "./app/_utils/*"
+      ],
+      "@type/*": [
+        "./app/_types/*"
+      ],
     },
     "incremental": true,
     "plugins": [

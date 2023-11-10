@@ -1,8 +1,6 @@
-import { SVGProps } from 'react'
+import { SVGComponentProps } from '@type/SVGComponentProps'
 
-interface StripeLogoProps extends SVGProps<SVGSVGElement> {}
-
-export const StripeLogo = (props: StripeLogoProps) => {
+export const StripeLogo = (props: SVGComponentProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
