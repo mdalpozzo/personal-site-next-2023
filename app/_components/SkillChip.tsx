@@ -14,7 +14,7 @@ export const SkillChip = ({ src, Icon, name }: SkillChipProps) => {
       href={src}
       className="flex flex-row gap-2 md:gap-6 justify-center items-center"
     >
-      <Icon className="h-8 w-8 md:h-20 md:w-20" />
+      <Icon className="h-12 w-12 md:h-20 md:w-20" />
       <p className="md:text-lg">{name}</p>
     </Link>
   )
