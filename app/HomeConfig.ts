@@ -23,7 +23,7 @@ export const HomeConfig: HomeConfig = {
       Icon: TypeScriptLogo,
     },
     {
-      name: 'DartLogo',
+      name: 'Dart',
       linkURL: 'https://dart.dev/',
       Icon: DartLogo,
     },
