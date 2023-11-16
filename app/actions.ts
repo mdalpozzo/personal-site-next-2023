@@ -60,5 +60,4 @@ export async function saveGuestbookEntry(formData: FormData) {
   });
 
   const response = await data.json();
-  console.log('Email sent', response);
 }
