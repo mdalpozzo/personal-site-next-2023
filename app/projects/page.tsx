@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { CustomImage } from '../_components/CustomImage'
 import { DividerHorizontal } from '../_components/DividerHorizontal'
+import { CloudinaryVideoPlayer } from '../_components/VideoPlayer'
 
 export default function ProjectsPage() {
   return (
@@ -16,20 +17,26 @@ export default function ProjectsPage() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div className="h-16 w-16 relative mb-4">
-          <CustomImage
-            fill
-            alt="Cabana Vans logo"
-            src="/images/cabana-logo-512x512.png"
-          />
+        <div className="flex flex-row items-center mb-6">
+          <div className="h-16 w-16 min-w-16 flex-shrink-0 relative">
+            <CustomImage
+              fill
+              alt="Cabana Vans logo"
+              src="/images/cabana-logo-512x512.png"
+            />
+          </div>
+
+          <div className="ml-4">
+            <p className="text-2xl">Cabana</p>
+            <p>
+              luxury camper van rentals. proprietary customized Cabana vans
+              complete with a shower, toilet, wifi, and a kitchen
+            </p>
+          </div>
         </div>
-        <p className="text-2xl">Cabana</p>
-        <p className="mb-6">
-          luxury camper van rentals. proprietary customized Cabana vans complete
-          with a shower, toilet, wifi, and a kitchen
-        </p>
       </Link>
-      <p>React and Flutter</p>
+
+      <p className="mb-4">built with React and Flutter</p>
       <p>this was a fun project.</p>
       <p>small scrappy engineering team.</p>
       <p>
@@ -37,6 +44,7 @@ export default function ProjectsPage() {
         pace. we put in 200% on a daily basis to bring this amazing product to
         life
       </p>
+
       <div className="flex flex-row gap-2 mt-4">
         <p>mobile apps:</p>
         <Link
@@ -55,6 +63,16 @@ export default function ProjectsPage() {
         </Link>
       </div>
 
+      <p className="mt-4">
+        Demo video of the 3 core applications built and maintained for Cabana
+      </p>
+      <div className="w-full md:w-1/2 aspect-video mt-4">
+        <CloudinaryVideoPlayer
+          videoPath="cabana_demo_abridged_voiceover"
+          posterOffset={110}
+        />
+      </div>
+
       <DividerHorizontal />
 
       <Link
@@ -62,20 +80,25 @@ export default function ProjectsPage() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <div className="h-16 w-16 relative mb-4">
-          <CustomImage
-            fill
-            alt="Santa Barbara Unfiltered logo"
-            src="/images/sb-unfiltered-logo.png"
-          />
+        <div className="flex flex-row items-center mb-6">
+          <div className="h-16 w-16 flex-shrink-0 relative">
+            <CustomImage
+              fill
+              alt="Santa Barbara Unfiltered logo"
+              src="/images/sb-unfiltered-logo.png"
+            />
+          </div>
+
+          <div className="ml-4">
+            <p className="text-2xl">Santa Barbara Unfiltered</p>
+            <p>
+              Local lifestyle publication. The food, sights, and news of Santa
+              Barbara.
+            </p>
+          </div>
         </div>
-        <p className="text-2xl">Santa Barbara Unfiltered</p>
-        <p className="mb-6">
-          Local lifestyle publication. The food, sights, and news of Santa
-          Barbara.
-        </p>
       </Link>
-      <p>built with Next.js</p>
+      <p className="mb-4">built with Next.js</p>
       <p>solo project from the ground up</p>
       <p>
         i built this site as a place for me and my wife to record and share our
@@ -85,22 +108,27 @@ export default function ProjectsPage() {
       <DividerHorizontal />
 
       <Link href="https://sbgi.net/" target="_blank" rel="noopener noreferrer">
-        <div className="h-16 w-28 relative mb-4">
-          <CustomImage
-            fill
-            alt="Komo News logo"
-            src="/images/sinclair-broadcast-group-logo.svg"
-          />
+        <div className="flex flex-row items-center mb-6">
+          <div className="h-16 w-28 flex-shrink-0 relative">
+            <CustomImage
+              fill
+              alt="Komo News logo"
+              src="/images/sinclair-broadcast-group-logo.svg"
+            />
+          </div>
+
+          <div className="ml-4 items-center">
+            <p className="text-2xl">
+              Sinclair Broadcast Group - Local News properties
+            </p>
+            <p>
+              Websites and mobile apps for local stations under the umbrella of
+              Sinclair Broadcast Group
+            </p>
+          </div>
         </div>
-        <p className="text-2xl">
-          Sinclair Broadcast Group - Local News properties
-        </p>
-        <p className="mb-6">
-          Websites and mobile apps for local stations under the umbrella of
-          Sinclair Broadcast Group
-        </p>
       </Link>
-      <p>built with React and React Native</p>
+      <p className="mb-4">built with React and React Native</p>
       <p>
         the Sinclair Digital team is responsible for creating and maintaining
         all the web based technology and applications for the 80+ local news
