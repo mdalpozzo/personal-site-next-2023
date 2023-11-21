@@ -45,24 +45,27 @@ export default function ContactPage() {
 
             <DividerHorizontal />
 
-            <div className='grid grid-cols-2 gap-2'>
-                <div className='flex flex-col items-start'>
-                    <p className="text-lg md:text-xl mb-4">social</p>
+            <div className='grid grid-cols-1 md:grid-cols-2 md gap-2'>
+                <div className='flex flex-col'>
+                    <p className="text-2xl md:text-xl font-bold mb-4">social</p>
 
-                    {socialLinks.map((link) => {
-                        return (
-                            <SocialLink
-                                key={link.name}
-                                imagePath={link.imagePath}
-                                url={link.url}
-                                name={link.name}
-                            />
-                        )
-                    })}
+                    <div className='md:flex md:flex-col grid grid-cols-2 gap-2 w-full items-start'>
+
+                        {socialLinks.map((link) => {
+                            return (
+                                <SocialLink
+                                    key={link.name}
+                                    imagePath={link.imagePath}
+                                    url={link.url}
+                                    name={link.name}
+                                />
+                            )
+                        })}
+                    </div>
                 </div>
 
                 <div>
-                    <p className='text-lg md:text-xl mb-4'>send me an email</p>
+                    <p className='text-2xl md:text-xl font-bold mb-4'>send me an email</p>
 
                     <EmailContactForm />
                 </div>
