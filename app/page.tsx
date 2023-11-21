@@ -39,7 +39,8 @@ export default function Page() {
                         </div>
 
                         <p className="prose prose-neutral dark:prose-invert text-base">
-                            i'm a full stack developer with an emphasis on frontend/UX
+                            i'm a full stack developer with an emphasis on
+                            frontend/UX
                         </p>
                     </div>
                 </div>
@@ -56,8 +57,12 @@ export default function Page() {
                             const { Icon, linkURL, name } = skill
 
                             return (
-                                <div className="flex">
-                                    <SkillChip key={name} Icon={Icon} src={linkURL} name={name} />
+                                <div key={name} className="flex">
+                                    <SkillChip
+                                        Icon={Icon}
+                                        src={linkURL}
+                                        name={name}
+                                    />
                                 </div>
                             )
                         })}
@@ -66,7 +71,9 @@ export default function Page() {
 
                 <DividerHorizontal />
 
-                <p className="text-2xl inline-block mb-6 mt-4 md:mt-10">Frameworks</p>
+                <p className="text-2xl inline-block mb-6 mt-4 md:mt-10">
+                    Frameworks
+                </p>
 
                 <SectionTitle name="Web" className="text-xl md:text-2xl mb-8" />
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
@@ -74,8 +81,12 @@ export default function Page() {
                         const { Icon, linkURL, name } = skill
 
                         return (
-                            <div className="flex">
-                                <SkillChip key={name} Icon={Icon} src={linkURL} name={name} />
+                            <div key={name} className="flex">
+                                <SkillChip
+                                    Icon={Icon}
+                                    src={linkURL}
+                                    name={name}
+                                />
                             </div>
                         )
                     })}
@@ -90,8 +101,12 @@ export default function Page() {
                         const { Icon, linkURL, name } = skill
 
                         return (
-                            <div className="flex">
-                                <SkillChip key={name} Icon={Icon} src={linkURL} name={name} />
+                            <div key={name} className="flex">
+                                <SkillChip
+                                    Icon={Icon}
+                                    src={linkURL}
+                                    name={name}
+                                />
                             </div>
                         )
                     })}
@@ -99,15 +114,21 @@ export default function Page() {
 
                 <DividerHorizontal />
 
-                <p className="text-2xl inline-block mb-8 mt-4 md:mt-10">Tools</p>
+                <p className="text-2xl inline-block mb-8 mt-4 md:mt-10">
+                    Tools
+                </p>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     {HomeConfig.tools.map((skill) => {
                         const { Icon, linkURL, name } = skill
 
                         return (
-                            <div className="flex">
-                                <SkillChip key={name} Icon={Icon} src={linkURL} name={name} />
+                            <div key={name} className="flex">
+                                <SkillChip
+                                    Icon={Icon}
+                                    src={linkURL}
+                                    name={name}
+                                />
                             </div>
                         )
                     })}
@@ -115,7 +136,9 @@ export default function Page() {
 
                 <DividerHorizontal />
 
-                <p className="text-2xl inline-block mb-8 mt-4 md:mt-10">Skills</p>
+                <p className="text-2xl inline-block mb-8 mt-4 md:mt-10">
+                    Skills
+                </p>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                     <div className="flex">

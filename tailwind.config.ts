@@ -20,6 +20,9 @@ export default {
           },
         },
       },
+      colors: {
+        'theme-bg': '#111010',
+      }
     },
   },
   future: {

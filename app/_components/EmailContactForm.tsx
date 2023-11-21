@@ -1,16 +1,16 @@
 'use client'
 
-import { FormEventHandler, forwardRef, useState } from "react"
-import { EmailRequestBody } from "../_types/ContactSendEmail"
-import { LinearProgress, Snackbar } from "@mui/material"
-import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import { FormEventHandler, forwardRef, useState } from 'react'
+import { EmailRequestBody } from '../_types/ContactSendEmail'
+import { LinearProgress, Snackbar } from '@mui/material'
+import MuiAlert, { AlertProps } from '@mui/material/Alert'
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
-    ref,
+    ref
 ) {
-    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
-});
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />
+})
 
 export const EmailContactForm = () => {
     const [name, setName] = useState('')
@@ -31,19 +31,20 @@ export const EmailContactForm = () => {
     }
 
     const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
-        event.preventDefault();
+        event.preventDefault()
 
         setIsSending(true)
 
         const body: EmailRequestBody = { name, email, subject, body: message }
 
-        const response = await fetch('/api/contact/sendEmail', { // Replace with your actual endpoint
+        const response = await fetch('/api/contact/sendEmail', {
+            // Replace with your actual endpoint
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(body),
-        });
+        })
 
         // TODO - show snackbar or something change ui
         if (response.ok) {
@@ -59,7 +60,7 @@ export const EmailContactForm = () => {
 
         setSnackbarOpen(true)
         setIsSending(false)
-    };
+    }
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col relative">
@@ -110,25 +111,31 @@ export const EmailContactForm = () => {
                 disabled={isSending}
             />
 
-            <button disabled={isSending} type="submit" className="p-2 bg-slate-500 mt-4 rounded-md hover:bg-slate-600">Send email to me</button>
-
-
-            {isSending && <div className="absolute rounded-md top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-purple-400 bg-opacity-50 p-6">
-                <LinearProgress className="w-full h-10 rounded-md" />
-            </div>}
-
-            <Snackbar
-                open={snackbarOpen}
-                autoHideDuration={6000}
+            <button
+                disabled={isSending}
+                type="submit"
+                className="p-2 bg-slate-500 mt-4 rounded-md hover:bg-slate-600"
             >
+                Send email to me
+            </button>
+
+            {isSending && (
+                <div className="absolute rounded-md top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-purple-400 bg-opacity-50 p-6">
+                    <LinearProgress className="w-full h-10 rounded-md" />
+                </div>
+            )}
+
+            <Snackbar open={snackbarOpen} autoHideDuration={6000}>
                 <Alert
                     onClose={() => setSnackbarOpen(false)}
-                    severity={sendSuccess ? "success" : "error"}
+                    severity={sendSuccess ? 'success' : 'error'}
                     sx={{ width: '100%' }}
                 >
-                    {sendSuccess ? 'Email sent successfully!' : 'Error sending email'}
+                    {sendSuccess
+                        ? 'Email sent successfully!'
+                        : `Error sending email`}
                 </Alert>
             </Snackbar>
         </form>
-    );
+    )
 }
