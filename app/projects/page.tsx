@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { CustomImage } from '../_components/CustomImage'
 import { DividerHorizontal } from '../_components/DividerHorizontal'
 import { CloudinaryVideoPlayer } from '../_components/VideoPlayer'
+import { cn } from '../_utils/cn'
 
 export default function ProjectsPage() {
   return (
@@ -10,40 +11,56 @@ export default function ProjectsPage() {
 
       <DividerHorizontal />
 
-      <p></p>
-
       <Link
         href="https://www.cabana.life/"
         target="_blank"
         rel="noopener noreferrer"
+        className={cn(
+          "flex flex-row items-center mb-6 mt-10",
+          "rounded-md p-4 border-2 border-solid border-gray-300 hover:bg-zinc-800"
+        )}
       >
-        <div className="flex flex-row items-center mb-6">
-          <div className="h-16 w-16 min-w-16 flex-shrink-0 relative">
-            <CustomImage
-              fill
-              alt="Cabana Vans logo"
-              src="/images/cabana-logo-512x512.png"
-            />
-          </div>
+        <div className="h-16 w-16 min-w-16 flex-shrink-0 relative">
+          <CustomImage
+            fill
+            alt="Cabana Vans logo"
+            src="/images/cabana-logo-512x512.png"
+          />
+        </div>
 
-          <div className="ml-4">
-            <p className="text-2xl">Cabana</p>
-            <p>
-              luxury camper van rentals. proprietary customized Cabana vans
-              complete with a shower, toilet, wifi, and a kitchen
-            </p>
-          </div>
+        <div className="ml-4">
+          <p className="text-2xl">Cabana</p>
+          <p>
+            luxury camper van rentals. proprietary customized Cabana vans
+            complete with a shower, toilet, wifi, and a kitchen
+          </p>
         </div>
       </Link>
 
-      <p className="mb-4">built with React and Flutter</p>
-      <p>this was a fun project.</p>
-      <p>small scrappy engineering team.</p>
+      <p>this was a fun project and I was deeply and directly involved in all levels of the stack.</p>
+      <p>small scrappy engineering team of 4 - 6.</p>
+      <p>helped grow the startup to ~$30 million in funding and ~50K monthly unique users</p>
       <p>
         we wrote an insane amount of code and busted out features at a blazing
         pace. we put in 200% on a daily basis to bring this amazing product to
         life
       </p>
+
+      <p className='text-xl mb-4 mt-6'>Tech Stack</p>
+      <p className="pl-4 mb-4">React - Web Apps</p>
+      <p className="pl-4 mb-4">Flutter - Mobile Apps</p>
+      <p className="pl-4 mb-4">AWS - Web Hosting - S3/Cloudfront</p>
+      <p className="pl-4 mb-4">Gitlab - source control and ci/cd</p>
+      <p className="pl-4 mb-4">Codemagic - Mobile ci/cd</p>
+      <p className="pl-4 mb-4">Hasura/Apollo - PostgreSQL database with GraphQL interface</p>
+      <p className="pl-4 mb-4">Firebase/GCP - User Authentication, serverless cloud-based rest API and scheduled cloud functions</p>
+
+      <p className="text-xl mb-4">Other fun tools</p>
+      <p className="pl-4 mb-4">Invers - Vehicle telematics and remote vehicle control</p>
+      <p className="pl-4 mb-4">Stripe - Payment processing</p>
+      <p className="pl-4 mb-4">Google Analytics / Google Tag Manager - Analytics and user behavior</p>
+      <p className="pl-4 mb-4">Google Optimize / VWO - A/B testing</p>
+      <p className="pl-4 mb-4">Impact - Affiliate marketing</p>
 
       <div className="flex flex-row gap-2 mt-4">
         <p>mobile apps:</p>
@@ -73,62 +90,74 @@ export default function ProjectsPage() {
         />
       </div>
 
-      <DividerHorizontal />
+      {/* ========= SECTION DIVIDE ========= */}
 
       <Link
         href="https://www.sbunfiltered.com/"
         target="_blank"
         rel="noopener noreferrer"
+        className={cn(
+          "flex flex-row items-center mb-6 mt-10 md:mt-14",
+          "rounded-md p-4 border-2 border-solid border-gray-300 hover:bg-zinc-800"
+        )}
       >
-        <div className="flex flex-row items-center mb-6">
-          <div className="h-16 w-16 flex-shrink-0 relative">
-            <CustomImage
-              fill
-              alt="Santa Barbara Unfiltered logo"
-              src="/images/sb-unfiltered-logo.png"
-            />
-          </div>
+        <div className="h-16 w-16 flex-shrink-0 relative">
+          <CustomImage
+            fill
+            alt="Santa Barbara Unfiltered logo"
+            src="/images/sb-unfiltered-logo.png"
+          />
+        </div>
 
-          <div className="ml-4">
-            <p className="text-2xl">Santa Barbara Unfiltered</p>
-            <p>
-              Local lifestyle publication. The food, sights, and news of Santa
-              Barbara.
-            </p>
-          </div>
+        <div className="ml-4">
+          <p className="text-2xl">Santa Barbara Unfiltered</p>
+          <p>
+            Local lifestyle publication. The food, sights, and news of Santa
+            Barbara.
+          </p>
         </div>
       </Link>
-      <p className="mb-4">built with Next.js</p>
+
       <p>solo project from the ground up</p>
       <p>
         i built this site as a place for me and my wife to record and share our
         love for Santa Barbara
       </p>
 
-      <DividerHorizontal />
+      <p className='text-xl mb-4 mt-6'>Tech Stack</p>
+      <p className="pl-4 mb-4">Next.js - Web App</p>
+      <p className="pl-4 mb-4">Vercel - Hosting/Deployment</p>
 
-      <Link href="https://sbgi.net/" target="_blank" rel="noopener noreferrer">
-        <div className="flex flex-row items-center mb-6">
-          <div className="h-16 w-28 flex-shrink-0 relative">
-            <CustomImage
-              fill
-              alt="Komo News logo"
-              src="/images/sinclair-broadcast-group-logo.svg"
-            />
-          </div>
+      {/* ========= SECTION DIVIDE ========= */}
 
-          <div className="ml-4 items-center">
-            <p className="text-2xl">
-              Sinclair Broadcast Group - Local News properties
-            </p>
-            <p>
-              Websites and mobile apps for local stations under the umbrella of
-              Sinclair Broadcast Group
-            </p>
-          </div>
+      <Link
+        href="https://sbgi.net/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={cn(
+          "flex flex-row items-center mb-6 mt-10 md:mt-14",
+          "rounded-md p-4 border-2 border-solid border-gray-300 hover:bg-zinc-800"
+        )}
+      >
+        <div className="h-16 w-28 flex-shrink-0 relative">
+          <CustomImage
+            fill
+            alt="Komo News logo"
+            src="/images/sinclair-broadcast-group-logo.svg"
+          />
+        </div>
+
+        <div className="ml-4 items-center">
+          <p className="text-2xl">
+            Sinclair Broadcast Group - Local News properties
+          </p>
+          <p>
+            Websites and mobile apps for local stations under the umbrella of
+            Sinclair Broadcast Group
+          </p>
         </div>
       </Link>
-      <p className="mb-4">built with React and React Native</p>
+
       <p>
         the Sinclair Digital team is responsible for creating and maintaining
         all the web based technology and applications for the 80+ local news
@@ -145,6 +174,11 @@ export default function ProjectsPage() {
         be easily configured to work with each station's unique branding and
         content.
       </p>
+
+      <p className='text-xl mb-4 mt-6'>Tech Stack</p>
+      <p className="pl-4 mb-4">React - Web app</p>
+      <p className="pl-4 mb-4">React Native - Mobile apps</p>
+
       <Link
         className="mt-4"
         href="https://komonews.com/"
