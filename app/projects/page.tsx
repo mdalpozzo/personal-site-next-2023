@@ -232,6 +232,7 @@ export default function ProjectsPage() {
                 <p className="text-xl mb-4 mt-6">Tech Stack</p>
                 <p className="pl-4 mb-4">Next.js - Web App</p>
                 <p className="pl-4 mb-4">Vercel - Hosting/Deployment</p>
+                <p className="pl-4 mb-4">Contentful - Headless CMS</p>
             </ProjectCard>
         </div>
     )
