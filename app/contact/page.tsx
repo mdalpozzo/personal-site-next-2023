@@ -30,8 +30,8 @@ interface SocialLinkProps {
 
 const SocialLink = ({ imagePath, url, name }: SocialLinkProps) => {
     return (
-        <Link className='mb-2 hover:bg-slate-600 p-2 rounded-md' href={url}>
-            <div className="w-24 h-10 relative">
+        <Link className='flex mb-2 bg-slate-600 hover:bg-green-200 p-2 rounded-md justify-center items-center' href={url}>
+            <div className="w-24 md:w-32 h-10 md:h-20 relative">
                 <CustomImage fill alt={name} src={imagePath} className='object-contain' />
             </div>
         </Link>
@@ -45,11 +45,9 @@ export default function ContactPage() {
 
             <DividerHorizontal />
 
-            <div className='grid grid-cols-1 md:grid-cols-2 md gap-2'>
-                <div className='flex flex-col'>
-                    <p className="text-2xl md:text-xl font-bold mb-4">social</p>
-
-                    <div className='md:flex md:flex-col grid grid-cols-2 gap-2 w-full items-start'>
+            <div className='grid grid-cols-1 md:grid-cols-2 md gap-2 justify-center items-center'>
+                <div className='flex flex-col h-full'>
+                    <div className='md:flex md:flex-col grid grid-cols-2 gap-6 h-full w-full justify-evenly items-center'>
 
                         {socialLinks.map((link) => {
                             return (
@@ -65,7 +63,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                    <p className='text-2xl md:text-xl font-bold mb-4'>send me an email</p>
+                    <p className='text-2xl mt-6 md:mt-0 md:text-xl font-bold mb-4'>send me an email</p>
 
                     <EmailContactForm />
                 </div>
