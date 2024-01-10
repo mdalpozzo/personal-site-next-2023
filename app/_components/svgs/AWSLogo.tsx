@@ -1,8 +1,6 @@
-import { SVGProps } from 'react'
+import { SVGComponentProps } from '@type/SVGComponentProps'
 
-interface AWSLogoProps extends SVGProps<SVGSVGElement> {}
-
-export const AWSLogo = (props: AWSLogoProps) => {
+export const AWSLogo = (props: SVGComponentProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,8 +1,6 @@
-import { SVGProps } from 'react'
+import { SVGComponentProps } from '@type/SVGComponentProps'
 
-interface JavaScriptLogoProps extends SVGProps<SVGSVGElement> {}
-
-export const JavaScriptLogo = (props: JavaScriptLogoProps) => {
+export const JavaScriptLogo = (props: SVGComponentProps) => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 630" {...props}>
       <path fill="#f7df1e" d="M0 0h630v630H0z" />

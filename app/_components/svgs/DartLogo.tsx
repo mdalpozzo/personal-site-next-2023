@@ -1,8 +1,6 @@
-import { SVGProps } from 'react'
+import { SVGComponentProps } from '@type/SVGComponentProps'
 
-interface DartLogoProps extends SVGProps<SVGSVGElement> {}
-
-export const DartLogo = (props: DartLogoProps) => {
+export const DartLogo = (props: SVGComponentProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

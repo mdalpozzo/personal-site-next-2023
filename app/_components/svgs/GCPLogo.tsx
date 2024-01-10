@@ -1,8 +1,6 @@
-import { SVGProps } from 'react'
+import { SVGComponentProps } from '@type/SVGComponentProps'
 
-interface GCPLogoProps extends SVGProps<SVGSVGElement> {}
-
-export const GCPLogo = (props: GCPLogoProps) => {
+export const GCPLogo = (props: SVGComponentProps) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
