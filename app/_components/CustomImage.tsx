@@ -1,6 +1,6 @@
 'use client'
 
-import { cn } from '@/utils/cn'
+import { cn } from '@/app/_utils/cn'
 import Image from 'next/image'
 import { useState } from 'react'
 
