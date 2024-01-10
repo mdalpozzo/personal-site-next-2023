@@ -2,7 +2,7 @@ import './global.css'
 import clsx from 'clsx'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import Sidebar from './_components/sidebar'
+import Sidebar from './_components/navbar'
 import { Analytics } from '@vercel/analytics/react'
 import { cn } from '@/app/_utils/cn'
 

@@ -42,7 +42,7 @@ export default function Navbar() {
                     key={path}
                     href={path}
                     className={clsx(
-                      'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 flex align-middle',
+                      'transition-all hover:text-neutral-800 dark:hover:text-neutral-200 text-2xl flex align-middle',
                       {
                         'text-neutral-500': !isActive,
                       }
@@ -52,12 +52,12 @@ export default function Navbar() {
                       {name}
                       {path === pathname ? (
                         <motion.div
-                          className="absolute h-[1px] top-7 mx-2 inset-0 bg-neutral-200 dark:bg-neutral-800 z-[-1] dark:bg-gradient-to-r from-transparent to-neutral-900"
+                          className="absolute h-[3px] top-9 mx-2 inset-0 bg-neutral-100 dark:bg-neutral-800 z-[-1] dark:bg-gradient-to-l from-transparent to-neutral-400"
                           layoutId="sidebar"
                           transition={{
                             type: 'spring',
-                            stiffness: 350,
-                            damping: 30,
+                            stiffness: 400,
+                            damping: 20,
                           }}
                         />
                       ) : null}
