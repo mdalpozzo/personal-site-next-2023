@@ -11,7 +11,7 @@ export default function ProjectsPage() {
 
       <p></p>
 
-      <Link href="https://www.cabana.life/">
+      <Link href="https://www.cabana.life/" target="_blank" rel="noopener noreferrer">
         <div className="h-16 w-16 relative mb-4">
           <CustomImage
             fill
@@ -35,17 +35,17 @@ export default function ProjectsPage() {
       </p>
       <div className="flex flex-row gap-2 mt-4">
         <p>mobile apps:</p>
-        <Link href="https://apps.apple.com/us/app/cabana-vans/id1513401870">
+        <Link href="https://apps.apple.com/us/app/cabana-vans/id1513401870" target="_blank" rel="noopener noreferrer">
           <p className="text-blue-300">iOS</p>
         </Link>
-        <Link href="https://play.google.com/store/apps/details?id=com.vulog.carshare.sb.coya.prod&hl=en_US&gl=US">
+        <Link href="https://play.google.com/store/apps/details?id=com.vulog.carshare.sb.coya.prod&hl=en_US&gl=US" target="_blank" rel="noopener noreferrer">
           <p className="text-blue-300">android</p>
         </Link>
       </div>
 
       <DividerHorizontal />
 
-      <Link href="https://www.sbunfiltered.com/">
+      <Link href="https://www.sbunfiltered.com/" target="_blank" rel="noopener noreferrer">
         <div className="h-16 w-16 relative mb-4">
           <CustomImage
             fill
@@ -68,7 +68,7 @@ export default function ProjectsPage() {
 
       <DividerHorizontal />
 
-      <Link href="https://sbgi.net/">
+      <Link href="https://sbgi.net/" target="_blank" rel="noopener noreferrer">
         <div className="h-16 w-28 relative mb-4">
           <CustomImage
             fill
@@ -101,15 +101,15 @@ export default function ProjectsPage() {
         be easily configured to work with each station's unique branding and
         content.
       </p>
-      <Link className="mt-4" href="https://komonews.com/">
+      <Link className="mt-4" href="https://komonews.com/" target="_blank" rel="noopener noreferrer">
         <p className="text-blue-300">Komo News - Example Station</p>
       </Link>
       <div className="flex flex-row gap-2 mt-4">
         <p>mobile apps:</p>
-        <Link href="https://apps.apple.com/us/app/komo-news-mobile/id433508161">
+        <Link href="https://apps.apple.com/us/app/komo-news-mobile/id433508161" target="_blank" rel="noopener noreferrer">
           <p className="text-blue-300">iOS</p>
         </Link>
-        <Link href="https://play.google.com/store/apps/details?id=com.newssynergy.komo&hl=en_US&gl=US">
+        <Link href="https://play.google.com/store/apps/details?id=com.newssynergy.komo&hl=en_US&gl=US" target="_blank" rel="noopener noreferrer">
           <p className="text-blue-300">android</p>
         </Link>
       </div>
