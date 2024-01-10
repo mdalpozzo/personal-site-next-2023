@@ -66,9 +66,9 @@ export default function Page() {
 
         <DividerHorizontal />
 
-        <p className="text-2xl inline-block mb-8 mt-10">Frameworks</p>
+        <p className="text-2xl inline-block mb-6 mt-4 md:mt-10">Frameworks</p>
 
-        <SectionTitle name="Web" className="text-base md:text-2xl mb-10" />
+        <SectionTitle name="Web" className="text-xl md:text-2xl mb-8" />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {HomeConfig.frameworks.web.map((skill) => {
             const { Icon, linkURL, name } = skill
@@ -81,7 +81,10 @@ export default function Page() {
           })}
         </div>
 
-        <SectionTitle name="Mobile" className="text-base md:text-2xl mb-10 mt-10" />
+        <SectionTitle
+          name="Mobile"
+          className="text-xl md:text-2xl mb-8 mt-4 md:mt-10"
+        />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {HomeConfig.frameworks.mobile.map((skill) => {
             const { Icon, linkURL, name } = skill
@@ -96,7 +99,7 @@ export default function Page() {
 
         <DividerHorizontal />
 
-        <p className="text-2xl inline-block mb-8 mt-10">Tools</p>
+        <p className="text-2xl inline-block mb-8 mt-4 md:mt-10">Tools</p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           {HomeConfig.tools.map((skill) => {
@@ -112,7 +115,7 @@ export default function Page() {
 
         <DividerHorizontal />
 
-        <p className="text-2xl inline-block mb-8 mt-10">Skills</p>
+        <p className="text-2xl inline-block mb-8 mt-4 md:mt-10">Skills</p>
 
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
           <div className="flex">
