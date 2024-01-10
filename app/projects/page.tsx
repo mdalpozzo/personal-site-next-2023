@@ -117,46 +117,6 @@ export default function ProjectsPage() {
 
             <ProjectCard>
                 <Link
-                    href="https://www.sbunfiltered.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={cn(
-                        'flex flex-row items-center mb-6',
-                        'rounded-md p-4 border-2 border-solid border-black hover:bg-zinc-400 bg-slate-50'
-                    )}
-                >
-                    <div className="h-16 w-16 flex-shrink-0 relative">
-                        <CustomImage
-                            fill
-                            alt="Santa Barbara Unfiltered logo"
-                            src="/images/sb-unfiltered-logo.png"
-                        />
-                    </div>
-
-                    <div className="ml-4">
-                        <p className="text-2xl">Santa Barbara Unfiltered</p>
-                        <p>
-                            Local lifestyle publication. The food, sights, and
-                            news of Santa Barbara.
-                        </p>
-                    </div>
-                </Link>
-
-                <p>solo project from the ground up</p>
-                <p>
-                    i built this site as a place for me and my wife to record
-                    and share our love for Santa Barbara
-                </p>
-
-                <p className="text-xl mb-4 mt-6">Tech Stack</p>
-                <p className="pl-4 mb-4">Next.js - Web App</p>
-                <p className="pl-4 mb-4">Vercel - Hosting/Deployment</p>
-            </ProjectCard>
-
-            {/* ========= SECTION DIVIDE ========= */}
-
-            <ProjectCard>
-                <Link
                     href="https://sbgi.net/"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -232,6 +192,46 @@ export default function ProjectsPage() {
                         <p className="text-blue-300">android</p>
                     </Link>
                 </div>
+            </ProjectCard>
+
+            {/* ========= SECTION DIVIDE ========= */}
+
+            <ProjectCard>
+                <Link
+                    href="https://www.sbunfiltered.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={cn(
+                        'flex flex-row items-center mb-6',
+                        'rounded-md p-4 border-2 border-solid border-black hover:bg-zinc-400 bg-slate-50'
+                    )}
+                >
+                    <div className="h-16 w-16 flex-shrink-0 relative">
+                        <CustomImage
+                            fill
+                            alt="Santa Barbara Unfiltered logo"
+                            src="/images/sb-unfiltered-logo.png"
+                        />
+                    </div>
+
+                    <div className="ml-4">
+                        <p className="text-2xl">Santa Barbara Unfiltered</p>
+                        <p>
+                            Local lifestyle publication. The food, sights, and
+                            news of Santa Barbara.
+                        </p>
+                    </div>
+                </Link>
+
+                <p>solo project from the ground up</p>
+                <p>
+                    i built this site as a place for me and my wife to record
+                    and share our love for Santa Barbara
+                </p>
+
+                <p className="text-xl mb-4 mt-6">Tech Stack</p>
+                <p className="pl-4 mb-4">Next.js - Web App</p>
+                <p className="pl-4 mb-4">Vercel - Hosting/Deployment</p>
             </ProjectCard>
         </div>
     )
