@@ -1,10 +1,10 @@
-import type { Metadata } from 'next';
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Uses',
   description:
     "Here's what tech I'm currently using for coding, videos, and music.",
-};
+}
 
 export default function UsesPage() {
   return (
@@ -27,9 +27,9 @@ export default function UsesPage() {
         <ul>
           <li>
             Editor: VSCode (
-            <a href="https://gist.github.com/leerob/e7883ab35d900b8cbb684ac77e7c4703">
+            {/* <a href="https://gist.github.com/leerob/e7883ab35d900b8cbb684ac77e7c4703">
               Settings / Extensions
-            </a>
+            </a> */}
             )
           </li>
           <li>Theme: One Dark Pro</li>
@@ -76,5 +76,5 @@ export default function UsesPage() {
         </ul>
       </div>
     </section>
-  );
+  )
 }
