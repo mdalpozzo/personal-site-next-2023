@@ -116,7 +116,7 @@ export const EmailContactForm = () => {
                 type="submit"
                 className="p-2 bg-slate-500 mt-4 rounded-md hover:bg-slate-600"
             >
-                Send email to me
+                Send
             </button>
 
             {isSending && (

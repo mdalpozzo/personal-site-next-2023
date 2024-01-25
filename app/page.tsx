@@ -5,6 +5,7 @@ import { DividerHorizontal } from './_components/DividerHorizontal'
 import { HomeConfig } from './HomeConfig'
 import { cn } from '@utils/cn'
 import { SectionTitle } from './_components/SectionTitle'
+import { SectionWrapper } from './_components/SectionWrapper'
 
 // const ICON_SIZE = {
 //   mobile: 30,
@@ -75,42 +76,51 @@ export default function Page() {
                     Frameworks
                 </p>
 
-                <SectionTitle name="Web" className="text-xl md:text-2xl mb-8" />
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {HomeConfig.frameworks.web.map((skill) => {
-                        const { Icon, linkURL, name } = skill
+                <SectionWrapper>
+                    <SectionTitle
+                        name="Web"
+                        classNameText="text-base md:text-xl mb-8 w-full"
+                    />
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        {HomeConfig.frameworks.web.map((skill) => {
+                            const { Icon, linkURL, name } = skill
 
-                        return (
-                            <div key={name} className="flex">
-                                <SkillChip
-                                    Icon={Icon}
-                                    src={linkURL}
-                                    name={name}
-                                />
-                            </div>
-                        )
-                    })}
-                </div>
+                            return (
+                                <div key={name} className="flex">
+                                    <SkillChip
+                                        Icon={Icon}
+                                        src={linkURL}
+                                        name={name}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </div>
+                </SectionWrapper>
 
-                <SectionTitle
-                    name="Mobile"
-                    className="text-xl md:text-2xl mb-8 mt-4 md:mt-10"
-                />
-                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                    {HomeConfig.frameworks.mobile.map((skill) => {
-                        const { Icon, linkURL, name } = skill
+                <div className={cn('mt-4 md:mt-10')} />
 
-                        return (
-                            <div key={name} className="flex">
-                                <SkillChip
-                                    Icon={Icon}
-                                    src={linkURL}
-                                    name={name}
-                                />
-                            </div>
-                        )
-                    })}
-                </div>
+                <SectionWrapper>
+                    <SectionTitle
+                        name="Mobile"
+                        classNameText="text-base md:text-xl mb-8 w-full"
+                    />
+                    <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                        {HomeConfig.frameworks.mobile.map((skill) => {
+                            const { Icon, linkURL, name } = skill
+
+                            return (
+                                <div key={name} className="flex">
+                                    <SkillChip
+                                        Icon={Icon}
+                                        src={linkURL}
+                                        name={name}
+                                    />
+                                </div>
+                            )
+                        })}
+                    </div>
+                </SectionWrapper>
 
                 <DividerHorizontal />
 
