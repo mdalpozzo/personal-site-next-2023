@@ -75,9 +75,9 @@ export default function RootLayout({
     >
       <body className="antialiased mb-40 mt-8">
         <main className="mt-6 flex flex-col mx-6 md:mx-32">
-          <Sidebar />
+          {/* <Sidebar />
           {children}
-          <Analytics />
+          <Analytics /> */}
         </main>
       </body>
     </html>
