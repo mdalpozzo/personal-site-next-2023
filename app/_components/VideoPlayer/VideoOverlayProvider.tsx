@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState } from 'react'
 import FullScreenOverlay from '../FullScreenOverlay'
-import { CloudinaryVideoPlayer } from './VideoPlayer'
+import { CloudinaryVideoPlayer } from './CloudinaryVideoPlayer'
 
 interface VideoOverlayContextType {
     showVideoOverlay: (
@@ -51,10 +51,12 @@ export const VideoOverlayProvider = ({
             {children}
             {isVisible && videoPath && (
                 <FullScreenOverlay onClose={hideVideoOverlay}>
-                    <CloudinaryVideoPlayer
-                        videoPath={videoPath}
-                        posterOffset={posterOffset}
-                    />
+                    <div className="w-full min-w-[300px] md:w-1/2 aspect-video mt-4">
+                        <CloudinaryVideoPlayer
+                            videoPath={videoPath}
+                            posterOffset={posterOffset}
+                        />
+                    </div>
                 </FullScreenOverlay>
             )}
         </VideoOverlayContext.Provider>

@@ -1,18 +1,28 @@
 'use client'
 
+import { CustomImage } from '../CustomImage'
 import { useVideoOverlay } from './VideoOverlayProvider'
 
 interface ClickableVideoPosterProps {
     videoPath: string
     posterOffset?: number
+    posterUrl: string | undefined
+    alt: string
 }
 
 export const ClickableVideoPoster = ({
     videoPath,
     posterOffset,
+    posterUrl,
+    alt,
 }: ClickableVideoPosterProps) => {
     // TODO a close button?
     const { showVideoOverlay, hideVideoOverlay } = useVideoOverlay()
+
+    if (!posterUrl) {
+        console.log('No poster URL provided for video', videoPath)
+        return <div>IMAGE ERROR</div>
+    }
 
     return (
         <div
@@ -22,6 +32,8 @@ export const ClickableVideoPoster = ({
                     posterOffset: posterOffset,
                 })
             }}
-        ></div>
+        >
+            <CustomImage src={posterUrl} alt={alt} fill unoptimized />
+        </div>
     )
 }

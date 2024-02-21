@@ -1,3 +1,5 @@
+'use client'
+
 import Link from 'next/link'
 import { CustomImage } from '../_components/CustomImage'
 import { DividerHorizontal } from '../_components/DividerHorizontal'
@@ -5,10 +7,47 @@ import { cn } from '../_utils/cn'
 import { ProjectCard } from '../_components/ProjectCard'
 import { VideoOverlayProvider } from '../_components/VideoPlayer/VideoOverlayProvider'
 import { ClickableVideoPoster } from '../_components/VideoPlayer/ClickableVideoPoster'
-import { useState } from 'react'
+import { fetchSignedUrls } from './fetchSignedUrls'
+import { CloudinaryVideoPlayer } from '../_components/VideoPlayer/CloudinaryVideoPlayer'
+import { AdvancedVideo } from '@cloudinary/react'
 
-export default function ProjectsPage() {
+export interface SignedUrls {
+    [key: string]: string | undefined
+}
+
+// Assuming you have a predefined list of cloudinaryId or it could be fetched dynamically
+const cloudinaryIds = ['backoffice-dashboard', 'backoffice-tasks']
+
+const getCloudinaryImageUrls = async () => {
+    console.log('getCloudinaryImageUrls.getCloudinaryImageUrls called')
+
+    // Fetch signed URLs for your Cloudinary IDs
+    try {
+        const signedUrls = await fetchSignedUrls(cloudinaryIds)
+        console.log('getCloudinaryImageUrls.fetched signed urls: ', signedUrls)
+
+        if (!signedUrls) {
+            console.error(
+                'getCloudinaryImageUrls.Signed URLs were not fetched correctly.'
+            )
+            return {}
+        }
+
+        return signedUrls // This should be an object or array mapping cloudinaryIds to their signed URLs
+    } catch (error) {
+        console.error(
+            'getCloudinaryImageUrls.Failed to fetch signed URLs',
+            error
+        )
+        return {}
+    }
+}
+
+export default async function ProjectsPage() {
+    // const signedUrls = await getCloudinaryImageUrls()
+
     return (
+        // TODO this makes all the children elements client-side rendered, fix it
         <VideoOverlayProvider>
             <div>
                 <h1 className="text-3xl md:text-5xl">
@@ -45,21 +84,46 @@ export default function ProjectsPage() {
                         </div>
                     </Link>
 
+                    <div className="w-full md:w-1/2 aspect-video mt-4 mb-6">
+                        <CloudinaryVideoPlayer
+                            videoPath="cabana_demo_abridged_voiceover"
+                            posterOffset={110}
+                        />
+                        {/* <video src="https://asset.cloudinary.com/marlin-media/cbe385585dc79cd2a3f5c454b298e1da" width={500} /> */}
+                    </div>
+
+                    {/* // TODO: add other product images and videos, figure out how
+                    to design it. // one hightlight poster per backoffice,
+                    frontoffice, mobile? // modal with other features? */}
+
+                    {/* <ClickableVideoPoster
+                        videoPath="cabana_demo_abridged_voiceover"
+                        posterOffset={110}
+                        posterUrl={signedUrls?.['backoffice-dashboard']}
+                        alt="Cabana Backoffice Dashboard"
+                    />
+                    <ClickableVideoPoster
+                        videoPath="cabana_demo_abridged_voiceover"
+                        posterOffset={110}
+                        posterUrl={signedUrls?.['backoffice-tasks']}
+                        alt="Cabana Backoffice Dashboard"
+                    /> */}
+
                     <p>
-                        this was a fun project and I was deeply and directly
-                        involved in all levels of the stack.
+                        I lead the front end team on this was a fun project and
+                        I was deeply and directly in implementing and designing
+                        the full system stack.
                     </p>
-                    <p>small scrappy engineering team of 4 - 6.</p>
+                    <p>small scrappy engineering team of 6.</p>
                     <p>
                         helped grow the startup to ~$30 million in funding and
                         ~50K monthly unique users
                     </p>
                     <p>
                         we wrote an insane amount of code and busted out
-                        features at a blazing pace. we put in 200% on a daily
-                        basis to bring this amazing product to life
+                        features at a blazing pace. we put in big efforts on a
+                        daily basis to bring this amazing product to life
                     </p>
-
                     <p className="text-xl mb-4 mt-6">Tech Stack</p>
                     <p className="pl-4 mb-4">React - Web Apps</p>
                     <p className="pl-4 mb-4">Flutter - Mobile Apps</p>
@@ -78,7 +142,6 @@ export default function ProjectsPage() {
                         Firebase/GCP - User Authentication, serverless
                         cloud-based rest API and scheduled cloud functions
                     </p>
-
                     <p className="text-xl mb-4">Other fun tools</p>
                     <p className="pl-4 mb-4">
                         Invers - Vehicle telematics and remote vehicle control
@@ -92,7 +155,6 @@ export default function ProjectsPage() {
                         Google Optimize / VWO - A/B testing
                     </p>
                     <p className="pl-4 mb-4">Impact - Affiliate marketing</p>
-
                     <div className="flex flex-row gap-2 mt-4">
                         <p>mobile apps:</p>
                         <Link
@@ -110,16 +172,10 @@ export default function ProjectsPage() {
                             <p className="text-blue-300">android</p>
                         </Link>
                     </div>
-
                     <p className="mt-4">
                         Demo video of the 3 core applications built and
                         maintained for Cabana
                     </p>
-
-                    <ClickableVideoPoster
-                        videoPath="cabana_demo_abridged_voiceover"
-                        posterOffset={110}
-                    />
                 </ProjectCard>
 
                 {/* ========= SECTION DIVIDE ========= */}
@@ -250,3 +306,5 @@ export default function ProjectsPage() {
         </VideoOverlayProvider>
     )
 }
+
+// export const runtime = 'nodejs' // 'nodejs' (default) | 'edge'

@@ -16,7 +16,7 @@ const ICON_SIZE = 30
 export default function Page() {
     return (
         <section className="w-full">
-            {/* <div className="min-h-[240px] h-[40vh] md:h-[30vh] w-full flex flex-row gap-6 md:gap-20">
+            <div className="min-h-[240px] h-[40vh] md:h-[30vh] w-full flex flex-row gap-6 md:gap-20">
                 <div className="w-1/3 min-w-[120px] h-full relative">
                     <CustomImage
                         src="/images/marlin-portrait-photo.jpeg"
@@ -24,6 +24,7 @@ export default function Page() {
                         fill
                         style={{ objectPosition: '50% 30%' }}
                         className="aspect-video object-cover"
+                        priority
                     />
                 </div>
 
@@ -167,7 +168,7 @@ export default function Page() {
                         <p>Analytics</p>
                     </div>
                 </div>
-            </div> */}
+            </div>
         </section>
     )
 }

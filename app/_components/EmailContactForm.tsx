@@ -4,6 +4,7 @@ import { FormEventHandler, forwardRef, useState } from 'react'
 import { EmailRequestBody } from '../_types/ContactSendEmail'
 import { LinearProgress, Snackbar } from '@mui/material'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
+import { AppConfig } from '../appConfig'
 
 const Alert = forwardRef<HTMLDivElement, AlertProps>(function Alert(
     props,
@@ -37,14 +38,16 @@ export const EmailContactForm = () => {
 
         const body: EmailRequestBody = { name, email, subject, body: message }
 
-        const response = await fetch('/api/contact/sendEmail', {
-            // Replace with your actual endpoint
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(body),
-        })
+        const response = await fetch(
+            `${AppConfig.APP_BASE_URL}/api/contact/sendEmail`,
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(body),
+            }
+        )
 
         // TODO - show snackbar or something change ui
         if (response.ok) {
