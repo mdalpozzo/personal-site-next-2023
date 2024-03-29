@@ -58,7 +58,7 @@ export async function POST(request: NextRequest, res: Response) {
 
         try {
             const response = await sendEmail({
-                subject: `${name} - ${subject}`,
+                subject: `Personal Site - ${name} - ${subject}`,
                 from: process.env.GMAIL_EMAIL_ADDRESS,
                 text: bodyWithSenderInfo,
                 to: process.env.GMAIL_EMAIL_ADDRESS,

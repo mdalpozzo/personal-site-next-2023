@@ -79,3 +79,7 @@ const { showVideoOverlay, hideVideoOverlay } = useVideoOverlay()
 built with nodemailer and gmail api
 
 .env file (1p) is required with to enable the contact email form.
+
+
+## SVGs
+Using https://react-svgr.com/playground/ to convert raw SVG to component type
