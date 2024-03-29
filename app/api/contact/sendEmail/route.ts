@@ -80,15 +80,23 @@ export async function POST(request: NextRequest, res: Response) {
 
             if (confirmationEmailResponse.rejected) {
                 return new Response(
-                    'Email sent successfully, but confirmation email failed to send',
+                    JSON.stringify({
+                        message:
+                            'Email sent successfully, but confirmation email failed to send',
+                    }),
                     {
                         status: 200,
                     }
                 )
             } else {
-                return new Response('Email sent successfully', {
-                    status: 200,
-                })
+                return new Response(
+                    JSON.stringify({
+                        message: 'Email sent successfully',
+                    }),
+                    {
+                        status: 200,
+                    }
+                )
             }
         } catch (error) {
             const errorMessage =
@@ -96,9 +104,11 @@ export async function POST(request: NextRequest, res: Response) {
             console.error('Send email POST error: ', error)
 
             return new Response(
-                `Failed to send the email.  ${
-                    errorMessage ? `Error: ${errorMessage}` : ''
-                }`,
+                JSON.stringify({
+                    message: `Failed to send the email.  ${
+                        errorMessage ? `Error: ${errorMessage}` : ''
+                    }`,
+                }),
                 {
                     status: 500,
                 }

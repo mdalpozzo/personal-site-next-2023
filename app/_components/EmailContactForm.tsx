@@ -21,7 +21,7 @@ export const EmailContactForm = () => {
 
     const [isSending, setIsSending] = useState(false)
     const [sendSuccess, setSendSuccess] = useState(false)
-    const [sendError, setSendError] = useState(false)
+    const [sendError, setSendError] = useState('')
     const [snackbarOpen, setSnackbarOpen] = useState(false)
 
     const clearAllFields = () => {
@@ -35,6 +35,7 @@ export const EmailContactForm = () => {
         event.preventDefault()
 
         setIsSending(true)
+        setSendError('')
 
         const body: EmailRequestBody = { name, email, subject, body: message }
 
@@ -49,16 +50,19 @@ export const EmailContactForm = () => {
             }
         )
 
+        const responseData = await response.json()
+
         // TODO - show snackbar or something change ui
         if (response.ok) {
             // Handle success - e.g., show a success message
             setSendSuccess(true)
-            setSendError(false)
             clearAllFields()
         } else {
             // Handle error - e.g., show an error message
             setSendSuccess(false)
-            setSendError(true)
+            setSendError(
+                responseData?.message ? responseData.message : 'Unknown error'
+            )
         }
 
         setSnackbarOpen(true)
@@ -67,6 +71,8 @@ export const EmailContactForm = () => {
 
     return (
         <form onSubmit={handleSubmit} className="flex flex-col relative">
+            {sendError && <p className="text-red-500">{sendError}</p>}
+
             <label htmlFor="name">Name</label>
             <input
                 className="contact-input"
@@ -78,7 +84,6 @@ export const EmailContactForm = () => {
                 required
                 disabled={isSending}
             />
-
             <label htmlFor="email">Email</label>
             <input
                 className="contact-input"
@@ -90,7 +95,6 @@ export const EmailContactForm = () => {
                 required
                 disabled={isSending}
             />
-
             <label htmlFor="subject">Subject</label>
             <input
                 className="contact-input"
@@ -102,7 +106,6 @@ export const EmailContactForm = () => {
                 required
                 disabled={isSending}
             />
-
             <label htmlFor="message">Message</label>
             <textarea
                 className="contact-input"
@@ -113,7 +116,6 @@ export const EmailContactForm = () => {
                 required
                 disabled={isSending}
             />
-
             <button
                 disabled={isSending}
                 type="submit"
@@ -121,13 +123,11 @@ export const EmailContactForm = () => {
             >
                 Send
             </button>
-
             {isSending && (
                 <div className="absolute rounded-md top-0 left-0 right-0 bottom-0 flex items-center justify-center bg-purple-400 bg-opacity-50 p-6">
                     <LinearProgress className="w-full h-10 rounded-md" />
                 </div>
             )}
-
             <Snackbar open={snackbarOpen} autoHideDuration={6000}>
                 <Alert
                     onClose={() => setSnackbarOpen(false)}
