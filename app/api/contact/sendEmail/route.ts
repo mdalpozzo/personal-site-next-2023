@@ -64,7 +64,8 @@ export async function POST(request: NextRequest, res: Response) {
                 to: process.env.GMAIL_EMAIL_ADDRESS,
             })
 
-            if (response.rejected) {
+            if (response.rejected.length) {
+                console.error('Email rejected: ', response.rejected)
                 throw new Error(
                     `Email was rejected: ${response.rejected.join('; ')}`
                 )
